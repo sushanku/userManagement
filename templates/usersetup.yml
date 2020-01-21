@@ -1,0 +1,9 @@
+---
+- name: Run userManagement Role
+  hosts: slave
+  become: yes
+  become_method: sudo
+  roles:
+    - userManagement
+  vars_files:
+    - /home/sushan/ansible-practice/roles/user/vars/main.yml
