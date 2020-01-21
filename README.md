@@ -4,13 +4,13 @@ Role Name
 This is ansible automatation to manager users and groups in Linux server.\
 Role is userManagement.\
 Therefore create a folder name called roles and go to that folder.\
-Then, clone this repository.\
+Then, clone this repository.
 
 Requirements
 ------------
 
 Update vars/main.yml user password as required.\
-Update hosts file accordingly as per your host ip.\
+Update hosts file accordingly as per your host ip.
 
 Role Variables
 --------------
