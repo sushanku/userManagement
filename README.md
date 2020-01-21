@@ -29,7 +29,7 @@ ansible-playbook usersetup.yml
 Also, the following command will list the tags and run the tags accordingly.\
 ansible-playbook usersetup.yml --list-tags
 
-For example to run the listed tags, execute the following command:
+For example to run the listed tags, execute the following command:\
 ansible-playbook usersetup.yml -t add_new_user\
 \
 -t flag let you use the tags. The above playbook will only add the new user using the tags.
