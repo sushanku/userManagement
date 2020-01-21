@@ -1,31 +1,43 @@
 Role Name
 =========
 
-userManagement
+Role is userManagement.
+Therefore create a folder name called roles and go to that folder.
+Then, clone this repository.
+Next come out of the roles directory. Then, copy the host file and usersetup.yml file from templates.
 
 Requirements
 ------------
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+Update usersetup.yml file variables directory accordingly.
 
 Role Variables
 --------------
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+vars/main.yml has the variable and it contains the user password.
+
 
 Dependencies
 ------------
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+Role is userManagement.
+Therefore create a folder name called roles and go to that folder.
+Then, clone this repository.
+Next come out of the roles directory. Then, copy the host file and usersetup.yml file from templates.
+
 
 Example Playbook
 ----------------
+Then execute following command from outside the roles directory.
+ansible-playbook usersetup.yml
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+Also, the following command will list the tags and run the tags accordingly.
+ansible-playbook usersetup.yml --list-tags
 
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
+For example to run the listed tags, execute the following command:
+ansible-playbook usersetup.yml -t add_new_user
+
+-t flag let you use the tags. The above playbook will only add the new user using the tags.
 
 License
 -------
@@ -35,4 +47,5 @@ BSD
 Author Information
 ------------------
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+Sushan Kunwar
+Sytem Engineer/Devops Engineer
