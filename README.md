@@ -29,13 +29,13 @@ Next come out of the roles directory. Then, copy the host file and usersetup.yml
 Example Playbook
 ----------------
 Then execute following command from outside the roles directory.
-ansible-playbook usersetup.yml
+"ansible-playbook usersetup.yml"
 
 Also, the following command will list the tags and run the tags accordingly.
-ansible-playbook usersetup.yml --list-tags
+"ansible-playbook usersetup.yml --list-tags"
 
 For example to run the listed tags, execute the following command:
-ansible-playbook usersetup.yml -t add_new_user
+"ansible-playbook usersetup.yml -t add_new_user"
 
 -t flag let you use the tags. The above playbook will only add the new user using the tags.
 
