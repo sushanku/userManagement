@@ -1,0 +1,74 @@
+---
+# tasks file for user-management
+
+## This Tasks Creates a Group
+- name: Add a group
+  group:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - demogrp
+    - demogrp1
+    - demogrp2
+  tags: add_new_group
+
+
+## This Tasks Creates a Several Users on the Targeted Machine
+- name:  Add a Several User
+  user:
+    name: "{{ item }}"
+    state: present
+#    update_password: always
+    groups: demogrp
+    password: "{{ default_user_password | password_hash('sha512','aes512') }}"
+    shell: /bin/bash
+    update_password: on_create
+  with_items:
+    - demouser1
+    - demouser2
+    - demouser3
+    - demouser4
+  tags: add_new_user
+
+## This Task Creates SSH Public Key for Specified user
+- name: Generate SSH Keys
+  user:
+    name: "{{ item }}"
+    generate_ssh_key: yes
+    ssh_key_bits: 4096
+    ssh_key_file: .ssh/id_rsa
+  with_items:
+    - demouser1
+    - demouser2
+  tags: generate_ssh_keys
+
+## This Task is to copy the public keys to user_account
+- name: Update Authorized Keys for a User
+  authorized_key:
+    user: demouser1
+    state: present
+    key: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
+  tags: copy_pub_key
+
+## This task is to delete the user
+- name: Delete Several Users
+  user:
+    name: "{{ item }}"
+    state: absent
+    remove: yes
+  with_items:
+    - demouser3
+    - demouser4
+  tags: remove_user
+
+
+## This task is to delete several group
+
+- name: Delete Several Group
+  group:
+    name: "{{ item }}"
+    state: absent
+  with_items:
+    - demogrp1
+    - demogrp2
+  tags: remove_group
