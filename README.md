@@ -9,7 +9,7 @@ Next come out of the roles directory. Then, copy the host file and usersetup.yml
 Requirements
 ------------
 
-Update vars/main.yml user password as required.\n
+Update vars/main.yml user password as required.
 Update hosts file accordingly as per your host ip.
 
 Role Variables
