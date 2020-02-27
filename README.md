@@ -11,15 +11,13 @@ Requirements
 
 Update vars/main.yml user password as required.\
 Update hosts file accordingly as per your host ip.
+Come out of the roles directory. Then, copy the hosts file and usersetup.yml file from templates.
 
 Role Variables
 --------------
 
 vars/main.yml has the variable and it contains the user password.
 
-Dependencies
-------------
-Come out of the roles directory. Then, copy the hosts file and usersetup.yml file from templates.
 
 Example Playbook
 ----------------
